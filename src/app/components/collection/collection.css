@@ -1,0 +1,122 @@
+.collectionContainer {
+  padding: 1rem;
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.collectionText {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding-bottom: clamp(1.5rem, 5vw, 2rem);
+}
+
+.collectionTitle {
+  line-height: 1.1;
+}
+
+.collectionImageContainer {
+  position: relative;
+  width: 100%;
+  height: clamp(25rem, 30vw, 37rem);
+}
+
+.collectionSmallImageContainer {
+  position: relative;
+  width: 100%;
+  height: clamp(22rem, 30vw, 33rem);    
+}
+
+.collectionImageText {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding-top: 1rem;
+}
+
+.collection {
+  display: grid;
+  grid-template-columns: repeat(4, clamp(350px, 25vw, 450px)); /* 4 columns */
+  grid-template-rows: fit-content; /* rows adjust to content height */
+  grid-gap: 1rem;
+  overflow-x: auto;
+
+  margin-left: -1rem;
+  margin-right: -1rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+
+  /* hide scrollbar */
+  scrollbar-width: none; /* firefox */
+  -ms-overflow-style: none; /* ie/edge */
+}
+
+
+.collection::-webkit-scrollbar {
+  display: none; /* chrome/safari */
+}
+
+.collectionSection {
+  flex: 0 0 auto; /* don't shrink */
+  width: 100%; /* each item can be full width if you want */
+}
+
+.bubbleIndicator {
+  padding-top: 3rem;
+  display: flex;
+  flex-direction: row;
+  gap: 0.40rem;
+  justify-content: center;
+}
+
+.circleOutside {
+  width: clamp(12px, 2vw, 16px);
+  height: clamp(12px, 2vw, 16px);
+  border-radius: 50%;
+  background-color: transparent;
+  border: 1px solid #000000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.circleInside {
+  width: clamp(6px, 1.5vw, 8px);
+  height: clamp(6px, 1.5vw, 8px);
+  border-radius: 50%;
+  background-color: white;
+}
+
+.circleOutside.active .circleInside{
+  background-color: #000000;
+}
+
+@media (max-width: 768px) {
+  .collection {
+    scroll-snap-type: x mandatory;
+    scroll-padding-left: 1rem; /* THIS is the fix */
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .collectionSection {
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+  }
+}
+
+@media (min-width: 768px) {
+  .collectionText {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    align-items: center;
+  }
+  .collectionTitle {
+    grid-column: 1 / span 2;
+  }
+  .collectionDesc {
+    grid-column: 3 / span 5;
+  }
+}
+
+

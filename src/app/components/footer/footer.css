@@ -1,0 +1,139 @@
+.footerSection {
+  background-color: #171717;
+  color: white;
+  padding: 1rem;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+.footerSectionContent {
+  background-color: #171717;
+}
+.orphicType {
+  width: 100%;
+}
+
+.orphicText{
+  display:inline-block;
+  white-space:nowrap;
+  line-height:0.75;
+  margin:0;
+  padding:0;
+  font-weight:600;
+
+  background: linear-gradient(
+    to bottom,
+    #ffffff 0%,
+    #e6e6e6 25%,
+    #9a9a9a 55%,
+    #3a3a3a 80%,
+    #171717 100%
+  );
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+.footerMenuSection {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 1rem 0;
+    border-bottom: white solid 0.5px;
+}
+.footerMenu {
+    padding: 1.5rem 0;
+}
+.footerMenuTitle {
+    font-size: 20px;
+    font-weight: 500;
+}
+.footerMenuDescs{
+  display:flex;
+  flex-direction:column;
+  gap:1rem;
+
+  overflow:hidden;
+  max-height:0;
+  opacity:0;
+  padding:0;
+
+  transition:
+    max-height 420ms cubic-bezier(0.2, 0.8, 0.2, 1),
+    opacity 220ms ease;
+}
+
+.footerMenuDescs.open{
+  max-height:220px;
+  opacity:1;
+  padding:1rem 0;
+}
+.footerMenuDesc {
+    font-size: 18px;
+    color: #848484;
+}
+.footerRightsContainer {
+  display: flex;
+  justify-content: center;
+  padding: 1rem 0 3rem 0;
+}
+.footerRights {
+  font-size: 16px;
+  color: #404040;
+  text-align: center;
+  width: 60%;
+}
+
+.arrow {
+  transition: transform 200ms ease;
+  transform: rotate(180deg);
+  transform-origin: center;
+}
+
+.arrowOpen {
+  transform: rotate(0deg);
+}
+.footerMenuDesktop {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .footerMenu {
+    display: none;
+  }
+  .footerMenuDesktop {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 3rem;
+    padding: 4rem 0;
+  }
+}
+.footerMenuDesktopCapsuleOne {
+  grid-column: 1/ span 2;
+}
+.footerMenuDesktopCapsuleTwo {
+  grid-column: 3;
+}
+.footerMenuDesktopCapsuleThree {
+  grid-column: 4;
+}
+.footerMenuDesktopTitle {
+  font-size: 28px;
+  font-weight: 500;
+  padding: 0.75rem 0;
+}
+.footerMenuDesktopTitleContainer {
+  border-bottom: white solid 0.5px;
+  width: 100%;
+}
+
+.footerMenuDesktopDesc {
+  font-size: 22px;
+  color: #848484;
+}
+.footerMenuDesktopDescContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding-top: 1rem;
+}

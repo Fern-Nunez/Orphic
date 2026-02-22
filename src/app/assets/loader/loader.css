@@ -1,0 +1,36 @@
+.loaderOverlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  pointer-events: all;
+  overflow: hidden;
+
+  /* center the text perfectly */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.loaderPanel {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  /* huge square so rotation never exposes edges */
+  width: 220vmax;
+  height: 220vmax;
+
+  background: #171717;
+  transform-origin: top left;
+  will-change: transform;
+}
+
+
+.loaderText {
+  position: relative;      /* stays above panel */
+  z-index: 1;
+
+  color: #fff;
+  font-weight: 600;
+  font-size: 32px;
+}

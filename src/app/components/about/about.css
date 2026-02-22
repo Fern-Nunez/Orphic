@@ -1,0 +1,210 @@
+.aboutSection {
+    padding: 3rem 1rem;
+    line-height: 1.1;
+    max-width: 1440px;
+    margin: 0 auto;
+}
+.aboutImages {
+    position: relative;
+    height: clamp(40rem, 90vw, 70rem);
+}
+
+.aboutImage1Container, .aboutImage2Container, .aboutImage3Container, .aboutImage4Container, .aboutImage5Container, .aboutImage6Container {
+    position: absolute;
+    background-color: #FAFAFA;
+    border: 1px solid #C9C9C9;
+    padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+    width: fit-content;
+    scale: 0.8;
+}
+
+
+.aboutImage1 {
+    position: relative;
+    width: 11rem;
+    height: 14rem;
+}
+
+.aboutImage2 {
+    position: relative;
+    width: 20rem;
+    height: 12rem;
+}
+
+.aboutImage1Text {
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    padding-top: 1rem;
+    padding-bottom: 0.25rem;
+}
+
+.aboutText h2 {
+    color: #C9C9C9;
+}
+
+@media (max-width: 420px) {
+    .aboutImage1Container {
+        z-index: 6;
+        left: 11.5rem;
+        top: 2rem;
+        rotate: -5.46deg;
+    }
+    .aboutImage2Container {
+        z-index: 5;
+        left: 13rem;
+        top: 25rem;
+        rotate: 22.41deg;
+    }
+
+    .aboutImage5Container {
+        z-index: 4;
+        left: 6rem;
+        top: 15rem;
+    }
+    .aboutImage3Container {
+        z-index: 3;
+        left: 0rem;
+        top: 9rem;
+        rotate: 42.68deg;
+    }
+    .aboutImage4Container {
+        z-index: 2;
+        left: -4rem;
+        top: 5rem;
+        rotate: -22.11deg;
+    }
+    .aboutImage6Container {
+        z-index: 3;
+        left: -5rem;
+        top: 23rem;
+        rotate: -0.83deg;
+    }
+}
+
+@media (min-width: 421px) and (max-width: 768px) {
+    .aboutImage1Container, .aboutImage2Container, .aboutImage3Container, .aboutImage4Container, .aboutImage5Container, .aboutImage6Container {
+    scale: 1.2;
+    }
+    .aboutImage1Container {
+        z-index: 6;
+        right: 2rem;
+        top: 4rem;
+        rotate: -5.46deg;
+    }
+    .aboutImage2Container {
+        z-index: 5;
+        right: 1rem;
+        top: 28rem;
+        rotate: 22.41deg;
+    }
+
+    .aboutImage5Container {
+        z-index: 4;
+        right: 4rem;
+        top: 17rem;
+    }
+    .aboutImage3Container {
+        z-index: 3;
+        left: 11rem;
+        top: 10rem;
+        rotate: 42.68deg;
+    }
+    .aboutImage4Container {
+        z-index: 2;
+        left: 1rem;
+        top: 7rem;
+        rotate: -22.11deg;
+    }
+    .aboutImage6Container {
+        z-index: 3;
+        left: 3rem;
+        top: 26rem;
+        rotate: -0.83deg;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .aboutImage1Container, .aboutImage2Container, .aboutImage3Container, .aboutImage4Container, .aboutImage5Container, .aboutImage6Container {
+    scale: 1.5;
+    }
+    .aboutImage1Container {
+        z-index: 6;
+        right: 6rem;
+        top: 7rem;
+        rotate: -5.46deg;
+    }
+    .aboutImage2Container {
+        z-index: 5;
+        right: 7rem;
+        top: 35rem;
+        rotate: 22.41deg;
+    }
+
+    .aboutImage5Container {
+        z-index: 4;
+        right:12rem;
+        top: 21rem;
+    }
+    .aboutImage3Container {
+        z-index: 3;
+        left: 17rem;
+        top: 13rem;
+        rotate: 42.68deg;
+    }
+    .aboutImage4Container {
+        z-index: 2;
+        left: 5rem;
+        top: 13rem;
+        rotate: -22.11deg;
+    }
+    .aboutImage6Container {
+        z-index: 3;
+        left: 10rem;
+        top: 33rem;
+        rotate: -0.83deg;
+    }
+}
+
+@media (min-width: 1025px) {
+    .aboutImage1Container, .aboutImage2Container, .aboutImage3Container, .aboutImage4Container, .aboutImage5Container, .aboutImage6Container {
+    scale: 1.8;
+    }
+    .aboutImage1Container {
+        z-index: 6;
+        right: 13rem;
+        top: 15rem;
+        rotate: -5.46deg;
+    }
+    .aboutImage2Container {
+        z-index: 5;
+        right: 11rem;
+        top: 40rem;
+        rotate: 22.41deg;
+    }
+
+    .aboutImage5Container {
+        z-index: 4;
+        right:27rem;
+        top: 30rem;
+    }
+    .aboutImage3Container {
+        z-index: 3;
+        left: 28rem;
+        top: 20rem;
+        rotate: 42.68deg;
+    }
+    .aboutImage4Container {
+        z-index: 2;
+        left: 8rem;
+        top: 20rem;
+        rotate: -22.11deg;
+    }
+    .aboutImage6Container {
+        z-index: 3;
+        left: 21rem;
+        top: 45rem;
+        rotate: -0.83deg;
+    }
+}

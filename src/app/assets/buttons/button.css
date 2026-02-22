@@ -1,0 +1,53 @@
+.customButton {
+  all: unset;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  border-bottom: 2px solid white;   /* full underline */
+  padding-bottom: 2px;
+  width: max-content;
+}
+
+
+/* WHITE VERSION */
+.customButton--white {
+  color: white;
+  border-bottom: 1px solid white;
+}
+
+/* BLACK VERSION */
+.customButton--black {
+  color: black;
+  border-bottom: 1px solid black;
+}
+
+.customButtonArrow {
+  display: inline-block;
+  transform: rotate(-45deg);
+}
+
+/* sizes */
+.customButton--small {
+  font-size: clamp(18px, 2vw, 22px); ;
+}
+
+.customButton--medium {
+  font-size: 22px;
+}
+
+.customButton--large {
+  font-size: 35px;
+}
+
+.customButton--small .customButtonArrow {
+  font-size: clamp(15px, 2vw, 18px);
+}
+
+.customButton--medium .customButtonArrow {
+  font-size: 18px;
+}
+
+.customButton--large .customButtonArrow {
+  font-size: 25px;
+}
