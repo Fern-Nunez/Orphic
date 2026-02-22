@@ -122,7 +122,7 @@ export default function Collection() {
           The <br /> Collection
         </h2>
         <p className="collectionDesc">
-          A collection centered on celebration, achievement, and place — captured through honest,
+          A collection centered on celebration, achievement, and place &ndash; captured through honest,
           story-driven imagery.
         </p>
       </div>
@@ -133,7 +133,7 @@ export default function Collection() {
           onClick={() => scrollToIndex(0)}
         >
           <div className="collectionImageContainer">
-            <Image src="/collection/graduation.jpg" alt="Graduation" fill style={{ objectFit: "cover" }} />
+            <Image src="/collection/graduation.webp" alt="Graduation" fill style={{ objectFit: "cover" }} />
           </div>
           <div className="collectionImageText">
             <h3>Graduation XIVX</h3>
@@ -147,10 +147,10 @@ export default function Collection() {
           onClick={() => scrollToIndex(1)}
         >
           <div className="collectionSmallImageContainer">
-            <Image src="/collection/twentyOne.jpg" alt="Twenty One" fill style={{ objectFit: "cover" }} />
+            <Image src="/collection/twentyOne.webp" alt="Twenty One" fill style={{ objectFit: "cover" }} />
           </div>
           <div className="collectionImageText">
-            <h3>The Big Twenty-One</h3>
+            <h3>The Big Twenty&ndash;One</h3>
             <p>A celebration captured in motion.</p>
             <Button text="View Project" size="small" variant="black" />
           </div>
@@ -162,7 +162,7 @@ export default function Collection() {
         >
           <div className="collectionImageContainer">
             <Image
-              src="/collection/beautifulMoments.jpg"
+              src="/collection/beautifulMoments.webp"
               alt="Beautiful Moments"
               fill
               style={{ objectFit: "cover" }}
@@ -180,7 +180,7 @@ export default function Collection() {
           onClick={() => scrollToIndex(3)}
         >
           <div className="collectionSmallImageContainer">
-            <Image src="/collection/romantic.jpg" alt="Golden Gatherings" fill style={{ objectFit: "cover" }} />
+            <Image src="/collection/romantic.webp" alt="Golden Gatherings" fill style={{ objectFit: "cover" }} />
           </div>
           <div className="collectionImageText">
             <h3>Golden Gatherings</h3>

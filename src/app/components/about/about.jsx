@@ -67,7 +67,7 @@ export default function About() {
       <div className="aboutSection">
         <div className="aboutText">
           <h2 ref={textRef}>
-            We document life&apos;s milestones — weddings, graduations, and meaningful
+            We document life&apos;s milestones &ndash; weddings, graduations, and meaningful
             spaces &ndash; with care and intention.
           </h2>
         </div>
@@ -75,7 +75,7 @@ export default function About() {
         <div className="aboutImages">
           <div className="aboutImage1Container">
             <div className="aboutImage1">
-              <Image src="/about/grad.jpg" alt="Graduation" fill style={{ objectFit: "cover" }} />
+              <Image src="/about/grad.webp" alt="Graduation" fill style={{ objectFit: "cover" }} />
             </div>
             <div className="aboutImage1Text">
               <span>Graduations</span>
@@ -84,7 +84,7 @@ export default function About() {
 
           <div className="aboutImage2Container">
             <div className="aboutImage1">
-              <Image src="/about/romantic.jpg" alt="Wedding" fill style={{ objectFit: "cover" }} />
+              <Image src="/about/romantic.webp" alt="Wedding" fill style={{ objectFit: "cover" }} />
             </div>
             <div className="aboutImage1Text">
               <span>Weddings</span>
@@ -93,7 +93,7 @@ export default function About() {
 
           <div className="aboutImage3Container">
             <div className="aboutImage1">
-              <Image src="/about/bubbles.jpg" alt="Moments" fill style={{ objectFit: "cover" }} />
+              <Image src="/about/bubbles.webp" alt="Moments" fill style={{ objectFit: "cover" }} />
             </div>
             <div className="aboutImage1Text">
               <span>Moments</span>
@@ -102,7 +102,7 @@ export default function About() {
 
           <div className="aboutImage4Container">
             <div className="aboutImage1">
-              <Image src="/about/birthday.jpg" alt="Birthday" fill style={{ objectFit: "cover" }} />
+              <Image src="/about/birthday.webp" alt="Birthday" fill style={{ objectFit: "cover" }} />
             </div>
             <div className="aboutImage1Text">
               <span>Birthdays</span>
@@ -111,7 +111,7 @@ export default function About() {
 
           <div className="aboutImage5Container">
             <div className="aboutImage2">
-              <Image src="/about/party.jpg" alt="Party" fill style={{ objectFit: "cover" }} />
+              <Image src="/about/party.webp" alt="Party" fill style={{ objectFit: "cover" }} />
             </div>
             <div className="aboutImage1Text">
               <span>Parties</span>
@@ -121,7 +121,7 @@ export default function About() {
           <div className="aboutImage6Container">
             <div className="aboutImage2">
               <Image
-                src="/about/oldBirthday.jpg"
+                src="/about/oldBirthday.webp"
                 alt="Birthday memory"
                 fill
                 style={{ objectFit: "cover" }}

@@ -306,7 +306,7 @@ export default function Footer() {
 
         <div className="footerRightsContainer">
           <div className="footerRights">
-            <span>Designed by Monoscale - All Rights Reserved.</span>
+            <span>Designed by Monoscale &ndash; All Rights Reserved.</span>
           </div>
         </div>
       </div>
