@@ -41,7 +41,7 @@ export default function CTA() {
     <div className="ctaSection" ref={rootRef}>
       <div className="ctaImage">
         <Image
-          src="/cta/landscape.jpg"
+          src="/cta/landscape.webp"
           alt="CTA Image"
           fill
           priority={false}
