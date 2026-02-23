@@ -133,7 +133,7 @@ export default function Collection() {
           onClick={() => scrollToIndex(0)}
         >
           <div className="collectionImageContainer">
-            <Image src="/collection/graduation.webp" alt="Graduation" fill style={{ objectFit: "cover" }} />
+            <Image src="/collection/graduationCompress.webp" alt="Graduation" fill style={{ objectFit: "cover" }} />
           </div>
           <div className="collectionImageText">
             <h3>Graduation XIVX</h3>
@@ -147,7 +147,7 @@ export default function Collection() {
           onClick={() => scrollToIndex(1)}
         >
           <div className="collectionSmallImageContainer">
-            <Image src="/collection/twentyOne.webp" alt="Twenty One" fill style={{ objectFit: "cover" }} />
+            <Image src="/collection/twentyOneCompress.webp" alt="Twenty One" fill style={{ objectFit: "cover" }} />
           </div>
           <div className="collectionImageText">
             <h3>The Big Twenty&ndash;One</h3>
@@ -162,7 +162,7 @@ export default function Collection() {
         >
           <div className="collectionImageContainer">
             <Image
-              src="/collection/beautifulMoments.webp"
+              src="/collection/beautifulMomentsCompress.webp"
               alt="Beautiful Moments"
               fill
               style={{ objectFit: "cover" }}
@@ -180,7 +180,7 @@ export default function Collection() {
           onClick={() => scrollToIndex(3)}
         >
           <div className="collectionSmallImageContainer">
-            <Image src="/collection/romantic.webp" alt="Golden Gatherings" fill style={{ objectFit: "cover" }} />
+            <Image src="/collection/romanticCompress.webp" alt="Golden Gatherings" fill style={{ objectFit: "cover" }} />
           </div>
           <div className="collectionImageText">
             <h3>Golden Gatherings</h3>
