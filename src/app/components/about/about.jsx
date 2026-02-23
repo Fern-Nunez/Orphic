@@ -102,7 +102,7 @@ export default function About() {
 
           <div className="aboutImage4Container">
             <div className="aboutImage1">
-              <Image src="/about/birthdayCompress.webp" alt="Birthday" fill style={{ objectFit: "cover" }} />
+              <Image src="/about/birthdayCompressed.webp" alt="Birthday" fill style={{ objectFit: "cover" }} />
             </div>
             <div className="aboutImage1Text">
               <span>Birthdays</span>
