@@ -27,6 +27,19 @@ export default function Collection() {
     el.scrollTo({ left: step * i, behavior: "smooth" });
   };
 
+  // preload next collection images so they feel instant on mobile
+  useEffect(() => {
+    const preloadImages = [
+      "/collection/beautifulMomentsCompress.webp",
+      "/collection/romanticCompress.webp",
+    ];
+
+    preloadImages.forEach((src) => {
+      const img = new window.Image();
+      img.src = src;
+    });
+  }, []);
+
   // ✅ keeps your activeIndex logic (unchanged)
   useEffect(() => {
     const el = scrollerRef.current;
