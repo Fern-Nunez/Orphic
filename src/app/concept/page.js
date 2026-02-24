@@ -11,8 +11,8 @@ export default function ConceptPage() {
             <Navbar/>
             <div className="conceptHero">
                 <Image
-                    src={"/concept/conceptHero.webp"}
-                    alt="Hero Image"
+                    src={"/concept/conceptHeroCompress.webp"}
+                    alt="Concept Hero Image"
                     fill
                     priority
                     sizes="100vw"
