@@ -1,7 +1,7 @@
 .footerSection {
   background-color: #171717;
   color: white;
-  padding: 1rem;
+  padding: 1rem clamp(1rem, 3vw, 6rem);
   max-width: 1440px;
   margin: 0 auto;
 }

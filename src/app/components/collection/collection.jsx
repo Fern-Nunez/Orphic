@@ -151,7 +151,7 @@ export default function Collection() {
           <div className="collectionImageText">
             <h3>Graduation XIVX</h3>
             <p>A milestone captured thoughtfully.</p>
-            <Button text="View Project" size="small" variant="black" />
+            <Button text="View Project" size="small" variant="black" href={"/concept"}/>
           </div>
         </div>
 
@@ -165,7 +165,7 @@ export default function Collection() {
           <div className="collectionImageText">
             <h3>The Big Twenty&ndash;One</h3>
             <p>A celebration captured in motion.</p>
-            <Button text="View Project" size="small" variant="black" />
+            <Button text="View Project" size="small" variant="black" href={"/concept"}/>
           </div>
         </div>
 
@@ -184,7 +184,7 @@ export default function Collection() {
           <div className="collectionImageText">
             <h3>Beautiful Moments</h3>
             <p>Warm, candid connection.</p>
-            <Button text="View Project" size="small" variant="black" />
+            <Button text="View Project" size="small" variant="black" href={"/concept"}/>
           </div>
         </div>
 
@@ -198,7 +198,7 @@ export default function Collection() {
           <div className="collectionImageText">
             <h3>Golden Gatherings</h3>
             <p>Love preserved forever still.</p>
-            <Button text="View Project" size="small" variant="black" />
+            <Button text="View Project" size="small" variant="black" href={"/concept"}/>
           </div>
         </div>
       </div>

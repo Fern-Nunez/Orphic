@@ -57,7 +57,7 @@ export default function CTA() {
           <span className="actualCTAText">
             Your next meaningful moment starts here.
           </span>
-          <Button text="Start your Story" size="small" />
+          <Button text="Start your Story" size="medium" href={"/concept"}/>
         </div>
       </div>
     </div>

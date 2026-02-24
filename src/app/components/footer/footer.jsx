@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useState, useEffect, useRef } from "react";
 import fitty from "fitty";
 import gsap from "gsap";
@@ -211,10 +212,10 @@ export default function Footer() {
             </div>
 
             <div className={`footerMenuDescs ${openSection === "menu" ? "open" : ""}`}>
-              <div className="footerMenuDesc">Home</div>
-              <div className="footerMenuDesc">About</div>
-              <div className="footerMenuDesc">Collection</div>
-              <div className="footerMenuDesc">Contact</div>
+              <Link href={"/concept"} className="footerMenuDesc">Home</Link>
+              <Link href={"/concept"} className="footerMenuDesc">About</Link>
+              <Link href={"/concept"} className="footerMenuDesc">Collection</Link>
+              <Link href={"/concept"} className="footerMenuDesc">Contact</Link>
             </div>
           </div>
 
@@ -234,10 +235,10 @@ export default function Footer() {
             </div>
 
             <div className={`footerMenuDescs ${openSection === "socials" ? "open" : ""}`}>
-              <div className="footerMenuDesc">Instagram</div>
-              <div className="footerMenuDesc">Twitter</div>
-              <div className="footerMenuDesc">Facebook</div>
-              <div className="footerMenuDesc">LinkedIn</div>
+              <Link href={"/concept"} className="footerMenuDesc">Instagram</Link>
+              <Link href={"/concept"} className="footerMenuDesc">Twitter</Link>
+              <Link href={"/concept"} className="footerMenuDesc">Facebook</Link>
+              <Link href={"/concept"} className="footerMenuDesc">LinkedIn</Link>
             </div>
           </div>
 
@@ -257,10 +258,10 @@ export default function Footer() {
             </div>
 
             <div className={`footerMenuDescs ${openSection === "resources" ? "open" : ""}`}>
-              <div className="footerMenuDesc">Documentation</div>
-              <div className="footerMenuDesc">Tutorials</div>
-              <div className="footerMenuDesc">Support</div>
-              <div className="footerMenuDesc">FAQ</div>
+              <Link href={"/concept"} className="footerMenuDesc">Documentation</Link>
+              <Link href={"/concept"} className="footerMenuDesc">Tutorials</Link>
+              <Link href={"/concept"} className="footerMenuDesc">Support</Link>
+              <Link href={"/concept"} className="footerMenuDesc">FAQ</Link>
             </div>
           </div>
         </div>
@@ -272,10 +273,10 @@ export default function Footer() {
               <div className="footerMenuDesktopTitle">Menu</div>
             </div>
             <div className="footerMenuDesktopDescContainer">
-              <div className="footerMenuDesktopDesc">Home</div>
-              <div className="footerMenuDesktopDesc">About</div>
-              <div className="footerMenuDesktopDesc">Collection</div>
-              <div className="footerMenuDesktopDesc">Contact</div>
+              <Link href={"/concept"} className="footerMenuDesktopDesc">Home</Link>
+              <Link href={"/concept"} className="footerMenuDesktopDesc">About</Link>
+              <Link href={"/concept"} className="footerMenuDesktopDesc">Collection</Link>
+              <Link href={"/concept"} className="footerMenuDesktopDesc">Contact</Link>
             </div>
           </div>
 
@@ -284,10 +285,10 @@ export default function Footer() {
               <div className="footerMenuDesktopTitle">Socials</div>
             </div>
             <div className="footerMenuDesktopDescContainer">
-              <div className="footerMenuDesktopDesc">Instagram</div>
-              <div className="footerMenuDesktopDesc">Twitter</div>
-              <div className="footerMenuDesktopDesc">Facebook</div>
-              <div className="footerMenuDesktopDesc">LinkedIn</div>
+              <Link href={"/concept"} className="footerMenuDesktopDesc">Instagram</Link>
+              <Link href={"/concept"} className="footerMenuDesktopDesc">Twitter</Link>
+              <Link href={"/concept"} className="footerMenuDesktopDesc">Facebook</Link>
+              <Link href={"/concept"} className="footerMenuDesktopDesc">LinkedIn</Link>
             </div>
           </div>
 
@@ -296,10 +297,10 @@ export default function Footer() {
               <div className="footerMenuDesktopTitle">Resources</div>
             </div>
             <div className="footerMenuDesktopDescContainer">
-              <div className="footerMenuDesktopDesc">Documentation</div>
-              <div className="footerMenuDesktopDesc">Tutorials</div>
-              <div className="footerMenuDesktopDesc">Support</div>
-              <div className="footerMenuDesktopDesc">FAQ</div>
+              <Link href={"/concept"} className="footerMenuDesktopDesc">Documentation</Link>
+              <Link href={"/concept"} className="footerMenuDesktopDesc">Tutorials</Link>
+              <Link href={"/concept"} className="footerMenuDesktopDesc">Support</Link>
+              <Link href={"/concept"} className="footerMenuDesktopDesc">FAQ</Link>
             </div>
           </div>
         </div>

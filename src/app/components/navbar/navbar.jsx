@@ -85,12 +85,13 @@ export default function Navbar() {
           </div>
 
           <div className="desktopNav">
-            <Link href="/about">About Us</Link>
-            <Link href="/portfolio">Portfolio</Link>
+            <Link href="/concept">About Us</Link>
+            <Link href="/concept">Portfolio</Link>
             <Button
               text="Work with Us"
               onClick={() => {}}
               size="small"
+              href={"/concept"}
               className="workWithUsButton"
               variant={scrolled ? "black" : "white"}
             />
@@ -105,10 +106,10 @@ export default function Navbar() {
 
       <HingeOverlay open={menuOpen}>
         <div className="mobileMenuInner">
-          <Button text="About Us" size="large" className="mobileMenuButtonText" />
-          <Button text="Portfolio" size="large" className="mobileMenuButtonText" />
-          <Button text="Experience" size="large" className="mobileMenuButtonText" />
-          <Button text="Contact" size="large" className="mobileMenuButtonText" />
+          <Button text="About Us" size="large" className="mobileMenuButtonText" href={"/concept"}/>
+          <Button text="Portfolio" size="large" className="mobileMenuButtonText" href={"/concept"}/>
+          <Button text="Experience" size="large" className="mobileMenuButtonText" href={"/concept"}/>
+          <Button text="Contact" size="large" className="mobileMenuButtonText" href={"/concept"}/>
         </div>
       </HingeOverlay>
     </>

@@ -34,17 +34,22 @@ h1 {
 }
 
 h2 {
-  font-size: clamp(40px, 5vw, 64px);
+  font-size: clamp(40px, 4vw, 64px);
   font-weight: 500;
   line-height: 1.1;
 }
 
 h3 {
-  font-size: clamp(20px, 3vw, 24px);
+  font-size: clamp(20px, 1.5vw, 24px);
   font-weight: 500;
+}
+h4 {
+  font-size: clamp(32px, 4vw, 38px);
+  font-weight: 500;
+  line-height: 1.1;
 }
 
 p {
-  font-size: clamp(18px, 2vw, 22px);
+  font-size: clamp(18px, 1.5vw, 22px);
   font-weight: 400;
 }

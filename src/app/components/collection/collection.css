@@ -1,5 +1,5 @@
 .collectionContainer {
-  padding: 1rem;
+  padding: 1rem clamp(1rem, 3vw, 6rem);
   width: 100%;
   max-width: 1440px;
   margin: 0 auto;
@@ -25,7 +25,7 @@
 .collectionSmallImageContainer {
   position: relative;
   width: 100%;
-  height: clamp(22rem, 30vw, 33rem);    
+  height: clamp(22rem, 25vw, 33rem);    
 }
 
 .collectionImageText {
@@ -60,6 +60,7 @@
 .collectionSection {
   flex: 0 0 auto; /* don't shrink */
   width: 100%; /* each item can be full width if you want */
+  cursor: pointer;
 }
 
 .bubbleIndicator {

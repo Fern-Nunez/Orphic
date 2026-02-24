@@ -1,5 +1,5 @@
 .aboutSection {
-    padding: 3rem 1rem;
+    padding: 3rem clamp(1rem, 3vw, 6rem);;
     line-height: 1.1;
     max-width: 1440px;
     margin: 0 auto;
