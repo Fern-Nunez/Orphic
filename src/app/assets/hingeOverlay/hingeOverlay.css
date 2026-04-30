@@ -16,6 +16,7 @@
   width: 220vmax;
   height: 220vmax;
   background: #171717;
+  outline: transparent solid 1px;
 }
 
 .hingeContent {

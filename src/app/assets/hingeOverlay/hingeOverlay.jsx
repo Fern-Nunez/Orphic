@@ -26,8 +26,8 @@ export default function HingeOverlay({ open, children }) {
       // panel open
       .fromTo(
         ".hingePanel",
-        { rotate: -90, scale: 0.8, transformOrigin: "top left" },
-        { rotate: 0, scale: 1, duration: 0.9, ease: "expo.inOut" },
+        { rotationZ: -90, scale: 0.8, transformOrigin: "top left", force3D: true },
+        { rotationZ: 0, scale: 1, duration: 0.9, ease: "expo.inOut", force3D: true },
         0
       );
     }, root);

@@ -1,8 +1,7 @@
 "use client";
-
+import { useEffect, useRef } from "react";
+import Link from "next/link";
 import Image from "next/image";
-import Button from "../../assets/buttons/button";
-import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import "./collection.css";
@@ -10,210 +9,186 @@ import "./collection.css";
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Collection() {
-  const [activeIndex, setActiveIndex] = useState(0);
+  const sectionRef = useRef(null);
 
-  const rootRef = useRef(null);          // ✅ for gsap scoping
-  const scrollerRef = useRef(null);
-  const itemCount = 4;
+useEffect(() => {
+  const ctx = gsap.context(() => {
+    const isDesktop = window.innerWidth >= 768;
 
-  const scrollToIndex = (i) => {
-    const el = scrollerRef.current;
-    if (!el) return;
+    const title = sectionRef.current.querySelector(".collectionTitle");
 
-    const maxScroll = el.scrollWidth - el.clientWidth;
-    if (maxScroll <= 0) return;
-
-    const step = maxScroll / (itemCount - 1);
-    el.scrollTo({ left: step * i, behavior: "smooth" });
-  };
-
-  // preload next collection images so they feel instant on mobile
-  useEffect(() => {
-    const preloadImages = [
-      "/collection/beautifulMomentsCompress.webp",
-      "/collection/romanticCompress.webp",
-    ];
-
-    preloadImages.forEach((src) => {
-      const img = new window.Image();
-      img.src = src;
-    });
-  }, []);
-
-  // ✅ keeps your activeIndex logic (unchanged)
-  useEffect(() => {
-    const el = scrollerRef.current;
-    if (!el) return;
-
-    let raf = null;
-
-    const update = () => {
-      const maxScroll = el.scrollWidth - el.clientWidth;
-      if (maxScroll <= 0) {
-        setActiveIndex(0);
-        return;
-      }
-
-      const step = maxScroll / (itemCount - 1);
-      const idx = Math.round(el.scrollLeft / step);
-      const clamped = Math.max(0, Math.min(itemCount - 1, idx));
-
-      setActiveIndex((prev) => (prev === clamped ? prev : clamped));
-    };
-
-    const onScroll = () => {
-      if (raf) cancelAnimationFrame(raf);
-      raf = requestAnimationFrame(update);
-    };
-
-    update();
-    el.addEventListener("scroll", onScroll, { passive: true });
-    window.addEventListener("resize", update);
-
-    return () => {
-      if (raf) cancelAnimationFrame(raf);
-      el.removeEventListener("scroll", onScroll);
-      window.removeEventListener("resize", update);
-    };
-  }, []);
-
-  // ✅ ANIMATION: text pops up, then cards fade up quickly one after another
-  useEffect(() => {
-    if (!rootRef.current) return;
-
-    const ctx = gsap.context(() => {
-      // start states (prevents flash)
-      gsap.set(".collectionText > *", { y: 18, opacity: 0 });
-      gsap.set(".collectionSection", { y: 22, opacity: 0 });
-
-      const tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: rootRef.current,
-          start: "top 75%",
-          toggleActions: "play none none reset",
-        },
-      });
-
-      // text first (quick pop)
-      tl.to(".collectionText > *", {
-        y: 0,
+    gsap.fromTo(
+      title,
+      { opacity: 0, y: 40 },
+      {
         opacity: 1,
-        duration: 0.4,
+        y: 0,
+        duration: 1.2,
         ease: "power3.out",
-        stagger: 0.08,
-      });
-
-      // then cards (fade up, fairly quick)
-      tl.to(
-        ".collectionSection",
-        {
-          y: 0,
-          opacity: 1,
-          duration: 0.4,
-          ease: "power3.out",
-          stagger: 0.12,
+        scrollTrigger: {
+          trigger: title,
+          start: "top 90%",
         },
-        "-=0.2" // slight overlap so it feels snappy
+      }
+    );
+
+    const cards = sectionRef.current.querySelectorAll(
+      ".projectLong, .projectShort, .projectLongLast"
+    );
+
+    cards.forEach((card, i) => {
+      const text = card.querySelectorAll(".projectDesc, .projectTitle");
+      const image = card.querySelector("[class*='Image']");
+
+      gsap.fromTo(
+        text,
+        { opacity: 0, y: 30 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 1.0,
+          delay: isDesktop ? i * 0.08 : 0,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: card,
+            start: "top 85%",
+            toggleActions: "play none none none",
+          },
+        }
       );
 
-      // optional: indicator after cards
-      tl.fromTo(
-        ".bubbleIndicator",
-        { y: 12, opacity: 0 },
-        { y: 0, opacity: 1, duration: 0.4, ease: "power3.out" },
-        "-=0.2"
+      gsap.fromTo(
+        image,
+        { opacity: 0, y: 60 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 1.1,
+          delay: isDesktop ? i * 0.08 + 0.15 : 0.15,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: card,
+            start: "top 85%",
+            toggleActions: "play none none none",
+          },
+        }
       );
-    }, rootRef);
+    });
+  }, sectionRef);
 
-    return () => ctx.revert();
-  }, []);
+  return () => ctx.revert();
+}, []);
 
   return (
-    <div className="collectionContainer" ref={rootRef}>
-      <div className="collectionText">
-        <h2 className="collectionTitle">
-          The <br /> Collection
-        </h2>
-        <p className="collectionDesc">
-          A collection centered on celebration, achievement, and place &ndash; captured through honest,
-          story-driven imagery.
-        </p>
+    <>
+      <div className="collectionSection" ref={sectionRef}>
+        <div className="collectionTitle">
+          <h2>Moments <br/>Worth Keeping</h2>
+        </div>
+
+        <div className="projects">
+
+
+            <div className="projectLong">
+              <Link href={"/concept"}>
+                <div className="projectLongImage">
+                  <Image
+                    src="/collection/twentyOneCompress.webp"
+                    alt="Birthday"
+                    fill style={{ objectFit: "cover" }}
+                  />
+                </div>
+                <div className="projectDesc">
+                  <span>Birthday • 2026</span>
+                </div>
+                <div className="projectTitle">
+                  <h5>The Big Twenty-One</h5>
+                </div>
+              </Link>
+            </div>
+
+
+
+            <div className="projectShort">
+              <Link href={"/concept"}>
+                <div className="projectShortImage">
+                  <Image
+                    src="/collection/graduationCompress.webp"
+                    alt="Graduation"
+                    fill style={{ objectFit: "cover" }}
+                  />
+                </div>
+                <div className="projectDesc">
+                  <span>Graduation • 2026</span>
+                </div>
+                <div className="projectTitle">
+                  <h5>Graduation XIVX</h5>
+                </div>
+              </Link>
+            </div>
+
+
+
+            <div className="projectShort">
+              <Link href={"/concept"}>
+                <div className="projectShortImage">
+                  <Image
+                    src="/collection/beautifulMomentsCompress.webp"
+                    alt="Family"
+                    fill style={{ objectFit: "cover" }}
+                  />
+                </div>
+                <div className="projectDesc">
+                  <span>Family • 2026</span>
+                </div>
+                <div className="projectTitle">
+                  <h5>Beautiful Moments</h5>
+                </div>
+              </Link>
+            </div>
+
+
+
+            <div className="projectLong">
+              <Link href={"/concept"}>
+                <div className="projectLongImage">
+                  <Image
+                    src="/collection/romanticCompress.webp"
+                    alt="Wedding"
+                    fill style={{ objectFit: "cover" }}
+                  />
+                </div>
+                <div className="projectDesc">
+                  <span>Wedding • 2025</span>
+                </div>
+                <div className="projectTitle">
+                  <h5>Lopez Family Engagement</h5>
+                </div>
+              </Link>
+            </div>
+
+
+            <div className="projectLongLast projectRowEnd">
+              <Link href={"/concept"}>
+                <div className="projectLongImageLast">
+                  <Image
+                    src="/collection/charlie.webp"
+                    alt="Birthday"
+                    fill style={{ objectFit: "cover" }}
+                  />
+                </div>
+                <div className="projectDesc">
+                  <span>Birthday • 2025</span>
+                </div>
+                <div className="projectTitle">
+                  <h5>Charlie&apos;s First</h5>
+                </div>
+              </Link>
+            </div>
+
+
+        </div>
       </div>
-
-      <div className="collection" ref={scrollerRef}>
-        <div
-          className={`collectionSection ${activeIndex === 0 ? "active" : ""}`}
-          onClick={() => scrollToIndex(0)}
-        >
-          <div className="collectionImageContainer">
-            <Image src="/collection/graduationCompress.webp" alt="Graduation" fill style={{ objectFit: "cover" }} />
-          </div>
-          <div className="collectionImageText">
-            <h3>Graduation XIVX</h3>
-            <p>A milestone captured thoughtfully.</p>
-            <Button text="View Project" size="small" variant="black" href={"/concept"}/>
-          </div>
-        </div>
-
-        <div
-          className={`collectionSection ${activeIndex === 1 ? "active" : ""}`}
-          onClick={() => scrollToIndex(1)}
-        >
-          <div className="collectionSmallImageContainer">
-            <Image src="/collection/twentyOneCompress.webp" alt="Twenty One" fill style={{ objectFit: "cover" }} />
-          </div>
-          <div className="collectionImageText">
-            <h3>The Big Twenty&ndash;One</h3>
-            <p>A celebration captured in motion.</p>
-            <Button text="View Project" size="small" variant="black" href={"/concept"}/>
-          </div>
-        </div>
-
-        <div
-          className={`collectionSection ${activeIndex === 2 ? "active" : ""}`}
-          onClick={() => scrollToIndex(2)}
-        >
-          <div className="collectionImageContainer">
-            <Image
-              src="/collection/beautifulMomentsCompress.webp"
-              alt="Beautiful Moments"
-              fill
-              style={{ objectFit: "cover" }}
-            />
-          </div>
-          <div className="collectionImageText">
-            <h3>Beautiful Moments</h3>
-            <p>Warm, candid connection.</p>
-            <Button text="View Project" size="small" variant="black" href={"/concept"}/>
-          </div>
-        </div>
-
-        <div
-          className={`collectionSection ${activeIndex === 3 ? "active" : ""}`}
-          onClick={() => scrollToIndex(3)}
-        >
-          <div className="collectionSmallImageContainer">
-            <Image src="/collection/romanticCompress.webp" alt="Golden Gatherings" fill style={{ objectFit: "cover" }} />
-          </div>
-          <div className="collectionImageText">
-            <h3>Golden Gatherings</h3>
-            <p>Love preserved forever still.</p>
-            <Button text="View Project" size="small" variant="black" href={"/concept"}/>
-          </div>
-        </div>
-      </div>
-
-      <div className="bubbleIndicator">
-        {[0, 1, 2, 3].map((i) => (
-          <div
-            key={i}
-            className={`circleOutside ${activeIndex === i ? "active" : ""}`}
-            onClick={() => scrollToIndex(i)}
-          >
-            {activeIndex === i && <div className="circleInside" />}
-          </div>
-        ))}
-      </div>
-    </div>
+    </>
   );
 }

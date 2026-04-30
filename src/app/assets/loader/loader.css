@@ -23,6 +23,8 @@
   background: #171717;
   transform-origin: top left;
   will-change: transform;
+  transform: translateZ(0.1); /* add this */
+  outline: transparent solid 1px;
 }
 
 

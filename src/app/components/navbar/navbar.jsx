@@ -111,6 +111,7 @@ export default function Navbar() {
           <Button text="Experience" size="large" className="mobileMenuButtonText" href={"/concept"}/>
           <Button text="Contact" size="large" className="mobileMenuButtonText" href={"/concept"}/>
         </div>
+        {/* this is just a text workflow video */}
       </HingeOverlay>
     </>
   );

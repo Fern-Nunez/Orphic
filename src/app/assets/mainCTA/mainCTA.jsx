@@ -32,7 +32,7 @@ export default function MainCTA() {
                         
                     </div>
                     <div className="mainCTAContentBottom">
-                        <span className="mainCTAPlace">Monoscale &ndash; Digital Design & Development Studio <br/>Los Angeles, California</span>
+                        <span className="mainCTAPlace">Monoscale &ndash; Digital Design & Development Studio <br/>San Bernardino, California</span>
                     </div>
                 </div>
             </div>

@@ -76,15 +76,16 @@
 @media (min-width: 768px) {
   .mainCTAContentBottom {
     align-self: flex-end;
+    padding-right: clamp(1rem, 2vw, 4rem);
   }
 }
 
 @media (min-width: 968px) {
     .mainCTAContentTop {
-        width: 60%;
+        width: 55%;
         justify-content: center;
         align-items: center;
         height: 100%;
-        padding-left: clamp(5rem, 10vw, 11rem);
+        padding-left: clamp(4rem, 10vw, 5rem);
     }
 }
